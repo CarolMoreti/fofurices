@@ -65,13 +65,32 @@ function csvParaObjetos(csvText) {
 
 function converterUrlParaImagemDireta(url) {
     if (!url) return null;
+
     if (url.includes('drive.google.com')) {
         let fileId = null;
-        let m = url.match(/\/file\/d\/([a-zA-Z0-9_-]+)/);
-        if (m) fileId = m[1];
-        if (!fileId) { m = url.match(/[?&]id=([a-zA-Z0-9_-]+)/); if (m) fileId = m[1]; }
-        if (fileId) return `https://drive.google.com/uc?export=view&id=${fileId}`;
-    } else if (url.startsWith('http')) return url;
+        // Tenta extrair o ID de URLs no formato /file/d/ID/...
+        let match = url.match(/\/file\/d\/([a-zA-Z0-9_-]+)/);
+        if (match) {
+            fileId = match[1];
+        } else {
+            // Tenta extrair o ID de URLs no formato ?id=ID ou &id=ID
+            match = url.match(/[?&]id=([a-zA-Z0-9_-]+)/);
+            if (match) {
+                fileId = match[1];
+            }
+        }
+
+        if (fileId) {
+            // O formato thumbnail pode ser mais estável para exibir imagens.
+            // sz=w1000 define a largura da imagem para 1000px.
+            return `https://drive.google.com/thumbnail?id=${fileId}&sz=w1000`;
+        }
+    } else if (url.startsWith('http')) {
+        // Se não for um link do Google Drive, mas for um link http, usa diretamente.
+        return url;
+    }
+
+    // Retorna nulo se não for uma URL válida ou não for possível extrair o ID.
     return null;
 }
 
@@ -99,7 +118,7 @@ function renderizarCategoriasIndex() {
     container.innerHTML = '';
     const btnTodos = document.createElement('button');
     btnTodos.className = 'category-button default';
-    btnTodos.textContent = '🎁 Todos';
+    btnTodos.textContent = 'Todos';
     btnTodos.onclick = () => { categoriaAtivaId = null; renderizarCategoriasIndex(); renderizarProdutosIndex(); };
     if (!categoriaAtivaId) btnTodos.classList.add('active');
     container.appendChild(btnTodos);
