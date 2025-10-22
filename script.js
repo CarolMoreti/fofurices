@@ -118,7 +118,7 @@ function renderizarCategoriasIndex() {
     container.innerHTML = '';
     const btnTodos = document.createElement('button');
     btnTodos.className = 'category-button default';
-    btnTodos.textContent = 'Todos';
+    btnTodos.textContent = '🎁 Todos';
     btnTodos.onclick = () => { categoriaAtivaId = null; renderizarCategoriasIndex(); renderizarProdutosIndex(); };
     if (!categoriaAtivaId) btnTodos.classList.add('active');
     container.appendChild(btnTodos);
