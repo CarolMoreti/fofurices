@@ -27,7 +27,9 @@
   .search-box {
     display: none;
   }
-
+  .imagem-principal{
+    margin-top:150px;
+  }
   .botoes {
     margin-top: 10px;
   }
