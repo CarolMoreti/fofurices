@@ -1,6 +1,6 @@
 @media (max-width: 1024px) {
   .search-box {
-    width: 400px;
+    display:none;
   }
 
   .main-img {
@@ -25,8 +25,7 @@
   }
 
   .search-box {
-    width: 90%;
-    margin-top: 10px;
+    display: none;
   }
 
   .botoes {
