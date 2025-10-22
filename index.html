@@ -11,19 +11,32 @@
 </head>
 <body>
     <header>
-    <img src="logo.jpeg" alt="" class="logo">
+    <a href="./index.html"><img src="logo.jpeg" alt="" class="logo"></a>
     <div class="search-box">
         <i class="fas fa-search"></i>
         <input type="text" placeholder="o que voce procura?">
     </div>
     <div class="botoes">
-        <button class="icon-btn"><i class="fas fa-heart"></i></button>
-        <button class="icon-btn"><i class="fas fa-shopping-bag"></i></button>
+        <a href="favoritos.html"><button class="icon-btn"><i class="fas fa-heart"></i></button></a>
+        <a href="carrinho.html"><button class="icon-btn"><i class="fas fa-shopping-bag"></i></button></a>
+        
     </div>
 </header>
 <section class="image-principal">
     <img src="main.jpeg" alt="" class="main-img">
 </section>
+<section class="category-container">
+    <button class="category-button default">Pelúcias 🧸</button>
+        <button class="category-button active">Bolsas 🎒</button>
+        <button class="category-button default">Chaveiros 🪀</button>
+        <button class="category-button active">P/ Quarto 🛏️</button>
+</section>
+<section class="products-section-filtered">
+    
+    <div class="products-grid-container" id="products-list">
+        
+        </div>
+</section>
 </body>
-
+<script src="script.js"></script>
 </html>
