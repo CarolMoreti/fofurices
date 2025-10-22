@@ -28,12 +28,32 @@
         </div>
     
     <div class="cart-bottom-actions">
-        <button class="action-btn white-btn">CONTINUAR COMPRA</button>
-        <button class="action-btn white-btn">ESVAZIAR CARRINHO</button>
-        <button class="action-btn white-btn">ADICIONAR MAIS ITENS</button>
+        <button onclick="abrirPopupCompra()" class="action-btn white-btn">Finalizar Compra 🛍️</button>
+        <button class="action-btn white-btn">Esvaziar Carrinho</button>
+        <a href="index.html"><button class="action-btn white-btn">Adicionar mais itens</button></a>
+        
     </div>
+
+    <div id="popup-compra" class="popup-overlay">
+  <div class="popup-box">
+    <button id="popup-fechar" class="popup-fechar">×</button>
+    <h2>Finalizar Compra 💖</h2>
+    <p class="popup-text">
+      Deseja mesmo finalizar a compra?<br>
+      Seus itens serão enviados para o pagamento.
+    </p>
+
+    <div class="popup-actions">
+      <button id="popup-cancelar" class="popup-btn cancelar">Cancelar</button>
+      <button id="popup-confirmar" class="popup-btn confirmar">Confirmar</button>
+    </div>
+
+    <p id="popup-feedback" class="popup-feedback"></p>
+  </div>
+</div>
 
 </main>
 </body>
+<script src="popup-compra.js"></script>
 <script src="script.js"></script>
 </html>
