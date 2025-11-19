@@ -19,8 +19,7 @@
 
 .product-image-box {
     /* Estilo do placeholder da imagem: fundo branco com borda preta sutil */
-    width: 100%;
-    padding-top: 100%; /* Truque para criar um quadrado (proporção 1:1) */
+    width: 100%; /* Truque para criar um quadrado (proporção 1:1) */
     background-color: #ffffff;
     border: 1px solid #333; /* Borda da imagem na cor mais escura */
     box-sizing: border-box;
@@ -153,4 +152,5 @@
         /* Centraliza os botões em telas menores */
         justify-content: center; 
     }
+
 }
