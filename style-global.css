@@ -113,7 +113,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 50px 50px;
+    margin:150px 50px 50px 50px;
     gap: 80px; /* Espaço entre os botões */
 }
 
